@@ -9,7 +9,7 @@ router.get("/", async (req, res) =>{
 
 router.post("/", async (req, res) =>{
   const task = req.body;
-  await Tasks.Create(task);
+  await Tasks.create(task);
   res.json(task)
 })
 

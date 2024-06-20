@@ -9,7 +9,7 @@ router.get("/", async (req, res) =>{
 
 router.post("/", async (req, res) =>{
   const project = req.body;
-  await Projects.Create(project);
+  await Projects.create(project);
   res.json(project);
 });
 
