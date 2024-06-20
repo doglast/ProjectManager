@@ -7,6 +7,12 @@ router.get("/", async (req, res) =>{
   res.json(projectsList);
 });
 
+router.get("/byProjectId/:project_id", async (req, res) => {
+  const project_id = req.params.project_id;
+  const project = await Projects.findByPk(project_id);
+  res.json(project);
+});
+
 router.post("/", async (req, res) =>{
   const project = req.body;
   await Projects.create(project);
