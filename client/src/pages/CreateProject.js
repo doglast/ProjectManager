@@ -17,21 +17,21 @@ export default function CreateProject() {
     });
   }
 
-  const validationSchema = Yup.object.shape({
+  const validationSchema = Yup.object({
     project_name: Yup.string().required(),
     project_description: Yup.string(),
     project_start_date: Yup.date().required()
-  })
+  });
   
 
   return (
-    <div className='createProjectContainer' >
+    <div className='createProjectPage' >
       <Formik 
         initialValues={initialValues} 
         onSubmit={onSubmit} 
         validationSchema={validationSchema}
       >
-        <Form>
+        <Form className="formContainer">
           <label>Nome do projeto</label>
           <ErrorMessage name="project_name" component="span" />
           <Field 
@@ -62,5 +62,5 @@ export default function CreateProject() {
         </Form>
       </Formik>
     </div>
-  )
+  );
 }
